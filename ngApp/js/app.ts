@@ -9,8 +9,6 @@ namespace app {
     $stateProvider.state('Home', {
       url: '/',
       templateUrl: '/templates/home.html',
-      controller: app.Controllers.HomeController,
-      controllerAs: 'vm'
     }).state('Login', {
       templateUrl: '/templates/login.html'
     });
