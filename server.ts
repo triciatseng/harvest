@@ -10,6 +10,8 @@ import passport = require('./config/passport');
 
 const app = express();
 
+require('./Harvests/model');
+require('./Plants/model');
 require('./User/model');
 
 let mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/harvest';
@@ -39,6 +41,8 @@ app.use(passport.session());
 app.use(express.static('./ngApp'));
 app.use('/scripts', express.static('bower_components'));
 
+app.use('/api/v1/harvests', require('./Harvests/routes'));
+app.use('/api/v1/plants', require('./Plants/routes'));
 app.use('/api/v1/users', require('./User/routes'));
 
 app.get('/*', function(req, res, next) {
