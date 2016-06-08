@@ -1,0 +1,21 @@
+{
+  "name": "harvest-app",
+  "version": "0.0.0",
+  "description": "save harvest data",
+  "scripts": {
+    "start": "node ./bin/www",
+    "devStart": "nodemon ./bin/www"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.1",
+    "dotenv": "^2.0.0",
+    "ejs": "^2.4.2",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.20",
+    "morgan": "^1.7.0",
+    "serve-favicon": "^2.3.0",
+    "uuid": "^2.0.2"
+  }
+}
