@@ -13,6 +13,8 @@ const app = express();
 require('./Harvests/model');
 require('./Plants/model');
 require('./User/model');
+require('./config/passport');
+
 
 let mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/harvest';
 mongoose.connect(mongoUrl,(err) => {

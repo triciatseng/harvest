@@ -28,12 +28,9 @@ export function getOne(req: express.Request, res: express.Response, next: Functi
 
 export function create(req: express.Request, res: express.Response, next: Function) {
     req.body.user = req['payload']._id;
-    Plant.create(req.body, (err, plant:IPlantModel)=>{
-        if (err) return next (err);
-        User.update({ _id: plant.user }, { $push: { 'plants': plant._id } }, (err, result) => {
-          if (err) return next(err);
-          res.json(plant);
-        });
+    Plant.create(req.body, (err, plant:IPlantModel) => {
+      if (err) return next(err);
+      res.json(plant);
     });
 }
 

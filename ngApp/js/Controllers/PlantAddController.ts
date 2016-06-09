@@ -5,7 +5,7 @@ namespace app.Controllers {
 
     public create(){
         this.PlantService.create(this.plant.name, this.plant.images, this.plant.datePlanted, this.plant.notes).then(()=>{
-            this.$state.go('Home');
+            this.$state.go('Plants');
         })
     }
 

@@ -1,5 +1,5 @@
 namespace app.Controllers {
-    export class PlantDetailsController {
+    export class HarvestController {
         public plant: app.i.IPlant;
         public status;
         public harvest: app.i.IHarvest;
@@ -9,7 +9,8 @@ namespace app.Controllers {
             this.HarvestService.create(this.harvest).then((res) => {
                 this.plant.harvests.push(res);
                 this.harvest.dateHarvested;
-                this.harvest.weight;
+                this.harvest.weightLB;
+                this.harvest.weightOZ;
                 this.harvest.images;
                 this.harvest.notes="";
                 this.$state.reload();
@@ -41,5 +42,5 @@ namespace app.Controllers {
             });
         }
     }
-    angular.module('app').controller("PlantDetailsController", PlantDetailsController);
+    angular.module('app').controller("HarvestController", HarvestController);
 }

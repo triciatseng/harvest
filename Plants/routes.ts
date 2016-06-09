@@ -1,4 +1,5 @@
 import * as express from 'express';
+// import * as jwt from ('express-jwt');
 let jwt = require('express-jwt');
 import * as controller from './controller';
 

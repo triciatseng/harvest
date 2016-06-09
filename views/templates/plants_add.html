@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container">
+                <form class="form-labels-on-top" method="post" action="#">
+                    <div class="form-title-row">
+                        <h1>Add a Plant</h1>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Plant Name</span>
+                            <input type="text" required="true" ng-model="vm.plant.name">
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Date Planted</span>
+                            <input type="date" required="true" ng-model="vm.plant.datePlanted">
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Notes</span>
+                            <textarea ng-model="vm.plant.notes"></textarea>
+                        </label>
+                    </div>
+                    <div class="form-row" style="text-align: center">
+                        <button type="submit" ng-click="vm.create()">Submit</button>
+                        <a ui-sref="Plants"><button>Cancel</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

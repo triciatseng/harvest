@@ -1,20 +1,62 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="app" lang="en">
 
 <head>
   <title>harvest-app</title>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <base href="/" />
   <link rel="stylesheet" href="/scripts/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="/css/site.css"/>
 </head>
-
-<body>
-  <div>
-    <a ui-sref="Login">Login</a>
+<body ng-controller = "GlobalController as global">
+  <div class="container-fluid">
+  	<div class="row">
+  		<div class="col-md-12" style="text-align: center">
+        <br />
+        <a href="http://www.cityslickerfarms.org/" target="_blank"><img src="../images/logo.jpg" / style="width: 10%;"></a>
+        <div class="col-md-12">
+    			<ul class="nav nav-tabs">
+    				<li class="dropdown pull-right">
+    					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Menu<strong class="caret"></strong></a>
+    					<ul class="dropdown-menu">
+                <li>
+                  <a ui-sref="Home">Home</a>
+                </li>
+                <li ng-show="global.status._id" class="divider">
+                </li>
+    						<li ng-show="global.status._id">
+    							<a ui-sref="Plants">View Plants</a>
+    						</li>
+                <li ng-show="global.status._id">
+                  <a ui-sref="Harvests">View Harvests</a>
+                </li>
+    						<li class="divider">
+    						</li>
+                <li ng-show="!global.status._id">
+                  <a href="/api/v1/users/auth/facebook" target="_self">Login with Facebook</a>
+                </li>
+    						<li ng-show="global.status._id">
+    							<a href="" ng-click="global.logout()">Logout</a>
+    						</li>
+    					</ul>
+    				</li>
+    			</ul>
+    		</div>
+  		</div>
+  	</div>
+  	<div class="row">
+  		<div class="col-md-6">
+        <ui-view></ui-view>
+  		</div>
+  		<div class="col-md-6">
+  		</div>
+  	</div>
   </div>
 
-  <ui-view></ui-view>
+
+
 
   <script src="/scripts/angular/angular.min.js"></script>
   <script src="/scripts/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -22,6 +64,9 @@
   <script src="/scripts/angular-animate/angular-animate.min.js"></script>
   <script src="/scripts/angular-touch/angular-touch.min.js"></script>
   <script src="/scripts/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 
   <script src="/js/app.js"></script>
   <script src="/js/Services/AuthInterceptor.js"></script>
@@ -31,8 +76,9 @@
   <script src="/js/Controllers/GlobalController.js"></script>
   <script src="/js/Controllers/HomeController.js"></script>
   <script src="/js/Controllers/PlantAddController.js"></script>
-  <script src="/js/Controllers/PlantDetailsController.js"></script>
   <script src="/js/Controllers/PlantUpdateController.js"></script>
+  <script src="/js/Controllers/HarvestController.js"></script>
+
 
 </body>
 

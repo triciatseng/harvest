@@ -16,7 +16,7 @@ namespace app.Services{
     }
 
     public update(harvest: app.i.IHarvest) {
-      return this.HarvestResource.update({id: harvest._id}, {images: harvest.images, weight: harvest.weight, dateHarvested: harvest.dateHarvested, notes: harvest.notes}).$promise;
+      return this.HarvestResource.update({id: harvest._id}, {images: harvest.images, weightLB: harvest.weightLB, weightOZ: harvest.weightOZ, dateHarvested: harvest.dateHarvested, notes: harvest.notes}).$promise;
     }
 
     constructor(private $resource: ng.resource.IResourceService) {

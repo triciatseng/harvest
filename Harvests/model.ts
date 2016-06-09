@@ -3,7 +3,8 @@ import * as mongoose from 'mongoose';
 export interface IHarvestModel extends app.i.IHarvest, mongoose.Document{}
 
 let harvestSchema = new mongoose.Schema({
-  weight: {type: Number, required: true},
+  weightLB: {type: Number, required: true},
+  weightOZ: {type: Number, required: true},
   dateHarvested: {type: Number, required: true},
   images: [],
   notes: {type: String},

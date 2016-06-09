@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container">
+                <form class="form-labels-on-top" method="post" action="#">
+                    <div class="form-title-row">
+                        <h1>Add a Harvest</h1>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Date Harvested</span>
+                            <input type="date" required="true" ng-model="vm.harvest.dateHarvested">
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Weight</span>
+                            <input type="number" required="true" ng-model="vm.harvest.dateHarvested"> lb
+                            <span class="space"></span>
+                            <input type="number" required="true" ng-model="vm.harvest.dateHarvested"> oz
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Notes</span>
+                            <textarea ng-model="vm.plant.notes"></textarea>
+                        </label>
+                    </div>
+                    <div class="form-row" style="text-align: center">
+                        <button type="submit" ng-click="vm.create()">Submit</button>
+                        <a ui-sref="Plants"><button>Cancel</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
